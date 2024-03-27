@@ -16,9 +16,14 @@
         },
       })
 
-      vim.cmd('highlight Normal      ctermbg=NONE guibg=NONE')
-      vim.cmd('highlight NormalNC    ctermbg=NONE guibg=NONE')
-      vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
+     if vim.g.neovide then
+       vim.g.neovide_transparency = 0.95
+     else
+        vim.cmd('highlight Normal      ctermbg=NONE guibg=NONE')
+        vim.cmd('highlight NormalNC    ctermbg=NONE guibg=NONE')
+        vim.cmd('highlight EndOfBuffer ctermbg=NONE guibg=NONE')
+        vim.g.transparency = 0.95
+     end
 
       vim.cmd('highlight IncSearch gui=bold guibg=Brown guifg=Wheat')
       vim.cmd('highlight Search    gui=bold guibg=Teal  guifg=Wheat')

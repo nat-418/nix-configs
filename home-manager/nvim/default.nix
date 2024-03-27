@@ -1,6 +1,12 @@
 # Neovim text editor configuration.
 { pkgs, ... }:
 
+let
+  neovide-shim = pkgs.writeShellScriptBin "neovide-shim" ''
+    exec ${pkgs.neovide}/bin/neovide --multigrid "$@"
+  '';
+in
+
 {
   imports = [
     ./buffers.nix
@@ -24,11 +30,12 @@
 
   home = {
     packages = with pkgs; [
+      neovide
       neovim-remote
     ];
     sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
+      EDITOR = "${neovide-shim}/bin/neovide-shim";
+      VISUAL = "${neovide-shim}/bin/neovide-shim";
     };
   };
 

@@ -35,7 +35,12 @@ in
       vim.g.loaded_netrwPlugin = 1
       vim.g.loaded_netrw       = 1
 
-      require('mini.animate').setup({})     -- Smooth scrolling, etc.
+      if vim.g.neovide then
+        vim.o.guifont = "BlexMono Nerd Font Mono:h10"
+      else
+        require('mini.animate').setup({})     -- Smooth scrolling, etc.
+      end
+
       require('mini.indentscope').setup({}) -- Show indent level
       -- require('mini.sessions').setup({})    -- Session management
       -- require('scamp').setup({})            -- Edit files over SCP
