@@ -24,7 +24,8 @@
           yellow = "#d8a657";    
         };
         selection = {
-          background = "#44c9f0";
+          text = "CellForeground";  
+          background = "#45403d";
         };
         dim = {
           black = "#1c191a";
@@ -63,7 +64,7 @@
           family = "BlexMono Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = 8;
+        size = 10;
       };
       shell = {
         program = "fish";
