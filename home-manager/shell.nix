@@ -22,7 +22,7 @@
     ];
   };
   programs = {
-    # Improved CTRL-R
+    # Improved CTRL-r
     atuin = {
       enable = true;
       enableBashIntegration = true; # Sometimes we need it
