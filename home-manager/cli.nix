@@ -41,6 +41,7 @@ in
       gitlab-runner
       gnumake
       hexyl
+      highlight
       hyperfine
       ijq
       imagemagick
@@ -58,7 +59,9 @@ in
       nil
       nmap
       plantuml
+      p7zip
       postgresql
+      poppler_utils
       python3Full
       qrencode
       rbw
@@ -80,12 +83,14 @@ in
       tk
       tkrev
       ttdl
+      unrar-wrapper
       unzip
       usbutils
       usql
       w3m
       wrk
       wget
+      ueberzugpp
       yewtube
       zig
       zip
@@ -95,7 +100,7 @@ in
 
   programs = {
     aria2.enable = true;
-    broot.enable = true;
+    gh.enable = true;
     git-cliff.enable = true;
     git = {
       enable = true;
@@ -155,9 +160,13 @@ in
     };
     texlive = {
       enable = true;
-      # packageSet = pkgs.texlive.combined.scheme-full;
+      packageSet = pkgs.texlive;
     };
     translate-shell.enable = true;
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+    };
     yt-dlp.enable = true;
     zellij.enable = true;
     zoxide = {
