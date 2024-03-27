@@ -38,6 +38,8 @@ in
       if vim.g.neovide then
         vim.o.guifont = "BlexMono Nerd Font Mono Regular:h12"
         vim.g.neovide_scale_factor = 1.0
+        vim.keymap.set('i', '<C-v>', '<C-r>+', {})
+        vim.keymap.set('v', '<C-c>', '"+y',    {})
       else
         require('mini.animate').setup({})     -- Smooth scrolling, etc.
       end
@@ -54,3 +56,4 @@ in
     '';
   };
 }
+
