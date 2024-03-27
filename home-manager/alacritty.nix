@@ -64,7 +64,7 @@
           family = "BlexMono Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = 10;
+        size = 12;
       };
       shell = {
         program = "fish";

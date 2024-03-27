@@ -134,6 +134,7 @@
         pst  = "btm --expanded --default_widget_type=proc --tree";
         rm   = "trash";
         t    = "todo.sh";
+        v    = "$EDITOR";
         vic  = "fed ~/Code/";
         vih  = "fed ~/.config/home-manager/";
         viH  = "fed ~";

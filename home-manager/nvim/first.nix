@@ -36,7 +36,8 @@ in
       vim.g.loaded_netrw       = 1
 
       if vim.g.neovide then
-        vim.o.guifont = "BlexMono Nerd Font Mono:h10"
+        vim.o.guifont = "BlexMono Nerd Font Mono Regular:h12"
+        vim.g.neovide_scale_factor = 1.0
       else
         require('mini.animate').setup({})     -- Smooth scrolling, etc.
       end
