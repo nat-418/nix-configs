@@ -15,10 +15,12 @@
       };
     };
     packages = with pkgs; [
-      bottom       # better top
-      todo-txt-cli # task manager
-      trash-cli    # rm for the sane
-      xsel         # NOTE: eventually replace with another clipboard manager
+      bottom        # better top
+      todo-txt-cli  # task manager
+      trash-cli     # rm for the sane
+      xsel          # NOTE: eventually replace with another clipboard manager
+      lazygit       # git TUI
+      gitlab-runner # run job locally
     ];
   };
   programs = {
@@ -66,6 +68,16 @@
         "--header"
       ];
     };
+    gh.enable = true;
+    git-cliff.enable = true;
+    git = {
+      enable = true;
+      delta.enable = true;
+      signing = {
+        signByDefault = false;
+        key = null;
+      };
+    };
     # Friendly Interactive SHell
     fish = {
       enable = true;
@@ -90,14 +102,14 @@
               --preview="bat --color=always --plain {}"
         '';
         # Fuzzy-finder for navigating filesystem
-        fc = ''
+        fcd = ''
           set directory (fd --type=directory . $argv[1] | fz || echo "")
           if test $directory != ""
             cd $directory
           end
         '';
         # Fuzzy-finder for navigating filesystem, ignoring nothing.
-        fca = ''
+        fcda = ''
           set directory (
             fd --no-ignore --hidden --type=directory . $argv[1] | fz || echo ""
           )
@@ -123,6 +135,15 @@
         # replace with wl-clipboard or whatever for Wayland
         # if there is no Xwayland available.
         copy = "xsel --input --clipboard <";
+        g    = "git";
+        ga   = "git add";
+        gb   = "git branch";
+        gc   = "git checkout";
+        gl   = "git log";
+        glo  = "git log --oneline";
+        gm   = "git commit --message";
+        gs   = "git status";
+        gw   = "git worktree";
         hm   = "home-manager";
         hms  = "home-manager switch -b (date +%Y-%m-%d:%T)";
         ls   = "eza";
@@ -134,7 +155,7 @@
         pst  = "btm --expanded --default_widget_type=proc --tree";
         rm   = "trash";
         t    = "todo.sh";
-        v    = "$EDITOR";
+        vi   = "$EDITOR";
         vic  = "fed ~/Code/";
         vih  = "fed ~/.config/home-manager/";
         viH  = "fed ~";

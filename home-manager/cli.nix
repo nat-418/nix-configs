@@ -38,7 +38,6 @@ in
       ffmpeg
       file
       fossil
-      gitlab-runner
       gnumake
       hexyl
       highlight
@@ -50,7 +49,6 @@ in
       jimtcl
       just
       lazydocker
-      lazygit
       litemdview
       lynx
       miniserve
@@ -100,16 +98,6 @@ in
 
   programs = {
     aria2.enable = true;
-    gh.enable = true;
-    git-cliff.enable = true;
-    git = {
-      enable = true;
-      delta.enable = true;
-      signing = {
-        signByDefault = false;
-        key = null;
-      };
-    };
     go = {
       enable = true;
       goPath = "$HOME/.go";
